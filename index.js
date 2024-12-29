@@ -101,3 +101,14 @@ app.get("/tasks/filter-by-priority", (req, res)=>{
   let results = tasks.filter(task => filterTasksByPriority(task, priority))
   res.json({tasks:results});
 });
+
+app.get('/greet', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.get("/rectangle-area", (req, res)=>{
+  let length= parseFloat(req.query.length);
+  let width= parseFloat(req.query.width);
+  let area = parseFloat(length*width);
+  res.send("The area of the rectangle is "+area);
+});
